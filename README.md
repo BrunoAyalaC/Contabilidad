@@ -163,19 +163,6 @@ ASPNETCORE_URLS=https://localhost:7001;http://localhost:5001
 4. Push a la rama (`git push origin feature/nueva-caracteristica`)
 5. Crear Pull Request
 
-## 📝 Licencia
 
-Este proyecto está bajo la Licencia MIT. Ver archivo `LICENSE` para más detalles.
 
-## 🆘 Soporte
 
-Para soporte y preguntas:
-
-- Crear issue en GitHub
-- Revisar documentación en `/docs`
-- Contactar al equipo de desarrollo
-
----
-
-**Plan Contable General Empresarial (PCGE) - Sistema Backend**  
-_Desarrollado con ❤️ para la comunidad contable peruana_
