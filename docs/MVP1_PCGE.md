@@ -281,8 +281,6 @@ volumes:
 9. **Elemento 9**: CONTABILIDAD ANALÍTICA
 10. **Elemento 0**: CUENTAS DE ORDEN
 
-### Cuentas de Ejemplo (Elemento 1)
-
 - **10**: EFECTIVO Y EQUIVALENTES DE EFECTIVO
 - **101**: Caja
 - **1011**: Caja en soles
