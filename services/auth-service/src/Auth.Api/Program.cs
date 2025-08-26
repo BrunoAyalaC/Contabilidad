@@ -6,6 +6,8 @@ using Auth.Api.Data;
 using Auth.Api.Services;
 using Auth.Api.Repositories;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.DataProtection;
+using System.IO;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,7 +43,6 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// CORS: allow dev server to send credentials (cookies)
 var frontendOrigin = builder.Configuration["Frontend:DevOrigin"] ?? "http://localhost:5173";
 builder.Services.AddCors(options =>
 {
@@ -62,9 +63,14 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Auth API", Version = "v1" });
 });
 
-// Health checks (liveness + readiness)
+
 builder.Services.AddHealthChecks()
     .AddNpgSql(builder.Configuration.GetConnectionString("DefaultConnection"), name: "postgresql");
+
+// DataProtection: persist keys to filesystem when running in container or if path configured
+var keysPath = builder.Configuration["DataProtection:KeysPath"] ?? Path.Combine(AppContext.BaseDirectory, "keys");
+builder.Services.AddDataProtection()
+    .PersistKeysToFileSystem(new DirectoryInfo(keysPath));
 
 var app = builder.Build();
 
@@ -75,7 +81,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Seed database with default user (development)
+
 try
 {
     Auth.Api.Seed.DbSeeder.SeedAsync(app.Services).GetAwaiter().GetResult();
@@ -93,7 +99,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Health endpoints
+
 app.MapHealthChecks("/health/live", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
 {
     Predicate = _ => false
