@@ -13,11 +13,10 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AccountingService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d81f1097a7950a33bf5af4f3b9b329b8117ec0e")]
 [assembly: System.Reflection.AssemblyProductAttribute("AccountingService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AccountingService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("AccountingService.Tests")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
 

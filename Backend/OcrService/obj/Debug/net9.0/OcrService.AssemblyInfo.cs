@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("OCR Service: procesa PDFs y extrae facturas (incluye fallback para tests).")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d81f1097a7950a33bf5af4f3b9b329b8117ec0e")]
 [assembly: System.Reflection.AssemblyProductAttribute("OcrService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OcrService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
