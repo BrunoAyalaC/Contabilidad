@@ -1,0 +1,14 @@
+{
+  "name": "sunat-service",
+  "version": "1.0.0",
+  "description": "Microservicio para consultar RUC en SUNAT y cachear los resultados.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
+  }
+}

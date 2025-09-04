@@ -1,0 +1,15 @@
+{
+  "name": "consulta-ruc-sunat",
+  "version": "1.0.0",
+  "description": "Consulta RUC en SUNAT usando Puppeteer (uso ocasional, no Python)",
+  "main": "consulta-ruc-playwright.js",
+  "scripts": {
+    "start": "node render-ruc-html-full.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^21.4.0",
+    "playwright": "^1.44.0"
+  }
+}

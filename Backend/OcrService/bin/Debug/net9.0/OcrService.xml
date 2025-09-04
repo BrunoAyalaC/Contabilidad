@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OcrService</name>
+    </assembly>
+    <members>
+        <member name="M:OcrService.Controllers.OcrController.PreflightInvoices">
+            <summary>
+            Allow anonymous OPTIONS preflight for the invoices endpoint so browsers can perform CORS preflight.
+            </summary>
+        </member>
+        <member name="T:OcrService.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:OcrService.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:OcrService.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:OcrService.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:OcrService.Models.ParsedInvoiceData">
+            <summary>
+            Structured representation of an extracted invoice.
+            </summary>
+        </member>
+        <member name="P:OcrService.Models.ParsedInvoiceData.InvoiceNumber">
+            <summary>Invoice identifier extracted from the document (when available).</summary>
+        </member>
+        <member name="P:OcrService.Models.ParsedInvoiceData.InvoiceDate">
+            <summary>Invoice date if parsable.</summary>
+        </member>
+        <member name="P:OcrService.Models.ParsedInvoiceData.Ruc">
+            <summary>RUC (tax identifier) if found.</summary>
+        </member>
+        <member name="P:OcrService.Models.ParsedInvoiceData.PartyName">
+            <summary>Supplier or customer name when detected.</summary>
+        </member>
+        <member name="P:OcrService.Models.ParsedInvoiceData.TotalAmount">
+            <summary>Total amount parsed from the invoice.</summary>
+        </member>
+        <member name="P:OcrService.Models.ParsedInvoiceData.TaxAmount">
+            <summary>Tax amount parsed (IGV/IVA).</summary>
+        </member>
+        <member name="P:OcrService.Models.ParsedInvoiceData.Currency">
+            <summary>Currency code (e.g., PEN, USD).</summary>
+        </member>
+        <member name="P:OcrService.Models.ParsedInvoiceData.DocumentType">
+            <summary>Document classification (FACTURA, BOLETA, etc.).</summary>
+        </member>
+        <member name="P:OcrService.Models.ParsedInvoiceData.LineItems">
+            <summary>Extracted line items (if any).</summary>
+        </member>
+        <member name="P:OcrService.Models.ParsedInvoiceData.ConfidenceScores">
+            <summary>
+            Confidence per field (0..1).
+            </summary>
+        </member>
+        <member name="T:OcrService.Models.ParsedInvoiceLine">
+            <summary>
+            Line item extracted from an invoice.
+            </summary>
+        </member>
+        <member name="P:OcrService.Models.ParsedInvoiceLine.Description">
+            <summary>Item description or product name.</summary>
+        </member>
+        <member name="P:OcrService.Models.ParsedInvoiceLine.Quantity">
+            <summary>Quantity parsed (nullable).</summary>
+        </member>
+        <member name="P:OcrService.Models.ParsedInvoiceLine.UnitPrice">
+            <summary>Unit price parsed (nullable).</summary>
+        </member>
+        <member name="P:OcrService.Models.ParsedInvoiceLine.Total">
+            <summary>Total line amount.</summary>
+        </member>
+        <member name="T:OcrService.Services.PendingImportWorker">
+            <summary>
+            Background worker that scans the PendingImports directory for queued import files
+            and retries sending them to the Accounting service. Files are JSON payloads produced by ImportController.
+            </summary>
+        </member>
+    </members>
+</doc>
