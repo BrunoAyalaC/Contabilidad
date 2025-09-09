@@ -1,0 +1,38 @@
+{
+  "name": "contablesys",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+  "dev": "vite",
+  "start": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
+  "test:mapper": "node scripts/run_mapper_test.cjs",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron:dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
+    "electron:preview": "vite preview & electron ."
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.8.2",
+    "framer-motion": "^12.23.12",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.3.1",
+    "lucide-react": "^0.542.0",
+  "recharts": "^2.12.7",
+  "pdfjs-dist": "^3.5.141",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+  "typescript": "~5.8.2",
+  "vite": "^6.2.0",
+    "electron": "^26.2.0",
+    "concurrently": "^8.2.0",
+    "wait-on": "^7.0.2",
+  "axios": "^1.11.0",
+  "vitest": "^1.3.0"
+  }
+}
